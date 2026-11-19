@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUDUL</title>
+
+    <!-- Bootstrap menyediakan style untuk navbar, form, tombol, dan tabel. -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">TP MVC</a>
+
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.php">Lecturers</a>
+                <a class="nav-link active" href="course.php">Courses</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+
+        <h2 class="mb-4">JUDUL</h2>
+
+        <!-- Form course -->
+        <div class="card mb-4">
+            <div class="card-header">
+                FORM_TITLE
+            </div>
+
+            <div class="card-body">
+                <!-- CourseView mengisi token form di bawah sebelum halaman ditampilkan. -->
+                <form action="course.php" method="POST">
+                    <input type="hidden" name="id" value="COURSE_ID">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nama Mata Kuliah</label>
+                            <input type="text" name="course_name" class="form-control" value="COURSE_NAME_VALUE" placeholder="Contoh: Pemrograman Web" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Kode Mata Kuliah</label>
+                            <input type="text" name="course_code" class="form-control" value="COURSE_CODE_VALUE" placeholder="Contoh: IF101" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">SKS</label>
+                            <input type="number" name="credits" class="form-control" value="CREDITS_VALUE" min="1" max="6" step="1" inputmode="numeric" placeholder="Jumlah SKS (1-6)" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Lecturer Pengampu</label>
+                            <select name="lecturer_id" class="form-select" required>
+                                <!-- Pilihan lecturer diisi oleh CourseView dari data Lecturer. -->
+                                DATA_LECTURER_OPTION
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" name="BUTTON_NAME" class="btn btn-primary">
+                        BUTTON_LABEL
+                    </button>
+                    <!-- Tombol ini hanya muncul pada mode edit. -->
+                    CANCEL_BUTTON
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabel course -->
+        <div class="card">
+            <div class="card-header">
+                Data Course
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Mata Kuliah</th>
+                                <th>Kode</th>
+                                <th>SKS</th>
+                                <th>Lecturer</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- Baris tabel Course diisi oleh CourseView. -->
+                            DATA_COURSE
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

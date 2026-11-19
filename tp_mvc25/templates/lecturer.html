@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUDUL</title>
+
+    <!-- Bootstrap menyediakan style untuk navbar, form, tombol, dan tabel. -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">TP MVC</a>
+            
+            <div class="navbar-nav">
+                <a class="nav-link active" href="index.php">Lecturers</a>
+                <a class="nav-link" href="course.php">Courses</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+
+        <h2 class="mb-4">JUDUL</h2>
+
+        <!-- Form tambah lecturer -->
+        <div class="card mb-4">
+            <div class="card-header">
+                FORM_TITLE
+            </div>
+
+            <div class="card-body">
+                <!-- Area ini menampilkan feedback dari proses validasi atau operasi data. -->
+                MESSAGE
+                <form action="index.php" method="POST">
+                    <!-- Token di bawah diisi oleh LecturerView sesuai mode tambah atau edit. -->
+                    <input type="hidden" name="id" value="LECTURER_ID">
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nama</label>
+                            <input type="text" name="name" class="form-control" value="NAME_VALUE" placeholder="Contoh: Fakhri Fauzan" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">NIDN</label>
+                            <input type="text" name="nidn" class="form-control" value="NIDN_VALUE" placeholder="Contoh: 1234567890" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nomor Telepon</label>
+                            <input type="text" name="phone" class="form-control" value="PHONE_VALUE" placeholder="Contoh: 081234567890" inputmode="numeric" pattern="[0-9]+" maxlength="20" title="Nomor telepon hanya boleh berisi angka" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Tanggal Bergabung</label>
+                            <input type="date" name="join_date" class="form-control" value="JOIN_DATE_VALUE" required>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" name="BUTTON_NAME" class="btn btn-primary">
+                        BUTTON_LABEL
+                    </button>
+                    <!-- Tombol ini hanya diisi pada mode edit. -->
+                    CANCEL_BUTTON
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabel lecturer -->
+        <div class="card">
+            <div class="card-header">
+                Data Lecturer
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>ID</th>
+                                <th>Nama</th>
+                                <th>NIDN</th>
+                                <th>Nomor Telepon</th>
+                                <th>Tanggal Bergabung</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- Baris tabel Lecturer dibuat oleh LecturerView. -->
+                            DATA_LECTURER
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
